@@ -22,7 +22,7 @@ class ShutdownTimer:
         self.minute_validator = self.root.register(self._validate_minutes)
 
         ### frame 1 - upper frame
-        self.upper_frame = ttk.Frame(self.root, padding="20", borderwidth="2", relief="sunken")
+        self.upper_frame = ttk.Frame(self.root, padding="20", )
         self.upper_frame.grid(row=0, rowspan=1)
         # static label
         ttk.Label(self.upper_frame, text="Select an action: ", font=('Times New Roman', 10)) \
@@ -36,7 +36,7 @@ class ShutdownTimer:
         self.action.grid(column=1, row=0)
 
         ### frame 2 - middle frame
-        self.middle_frame = ttk.Frame(self.root, padding="20", borderwidth="2", relief="sunken")
+        self.middle_frame = ttk.Frame(self.root, padding="20", )
         self.middle_frame.grid(row=1, )
         # label - perform action in
         self.perform_action_label = ttk.Label(self.middle_frame, text=f"Perform action in: ",
@@ -54,7 +54,7 @@ class ShutdownTimer:
         ttk.Label(self.middle_frame, text="Minutes", font=('Times New Roman', 10)).grid(column=2, row=0)
 
         ### frame 2.1 - progrees bar and buttons
-        self.progress_frame = ttk.Frame(self.root, padding="20", borderwidth="2", relief="sunken")
+        self.progress_frame = ttk.Frame(self.root, padding="20", )
         self.progress_frame.grid(row=2)
         # start button
         self.start_button = ttk.Button(self.progress_frame, text='Start', command=self.start_button_command)
@@ -69,7 +69,7 @@ class ShutdownTimer:
         self.stop_button.state(['disabled'])
 
         ### frame 3 - middle frame
-        self.bottom_frame = ttk.Frame(self.root, padding="20", borderwidth="2", relief="sunken")
+        self.bottom_frame = ttk.Frame(self.root, padding="20", )
         self.bottom_frame.grid(row=3, rowspan=1)
         # system time
         self.system_time_var = StringVar()
@@ -221,4 +221,3 @@ class ShutdownTimer:
 
 if __name__ == '__main__':
     app = ShutdownTimer()
-
